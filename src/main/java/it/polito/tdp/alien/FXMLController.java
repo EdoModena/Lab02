@@ -4,6 +4,7 @@
 package it.polito.tdp.alien;
 
 import java.net.URL;
+import java.util.LinkedList;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.alien.model.Model;
@@ -50,8 +51,8 @@ public class FXMLController {
     	}
     	else {
     		try{
-    			String trad=model.print(testo);
-    			txtrisultato.setText(trad);
+    			LinkedList<String> trad=model.print(testo);
+    			txtrisultato.setText("" + trad);
     		}
     		catch(RuntimeException re) {
     			txtrisultato.setText(re.getMessage());
@@ -65,7 +66,6 @@ public class FXMLController {
         assert btntranslate != null : "fx:id=\"btntranslate\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txtrisultato != null : "fx:id=\"txtrisultato\" was not injected: check your FXML file 'Scene.fxml'.";
         assert txttext != null : "fx:id=\"txttext\" was not injected: check your FXML file 'Scene.fxml'.";
-
     }
 
 	public void setModel(Model model) {
