@@ -7,7 +7,7 @@ import java.util.Map;
 public class Model {
 	Map<String,LinkedList<String>> dizionario= new HashMap<String,LinkedList<String>>();
 
-	public boolean add(String testo) {
+	public void add(String testo) {
 		String array[]=testo.split(" ");
 		if(array[0].matches("[a-z]+") && array[1].matches("[a-z]+")) {
 			if(dizionario.containsKey(array[0])) {
@@ -17,7 +17,6 @@ public class Model {
 				dizionario.put(array[0], new LinkedList<String>());
 				dizionario.get(array[0]).add(array[1]);
 			}
-			return true;
 		}
 		else
 			throw new RuntimeException("Errore in inserimento parola");

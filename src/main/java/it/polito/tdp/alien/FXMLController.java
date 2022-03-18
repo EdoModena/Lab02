@@ -36,11 +36,10 @@ public class FXMLController {
 
     @FXML
     void handletranslate(ActionEvent event) {
-    	Boolean ok;
     	String testo=txttext.getText().toLowerCase();
     	if(testo.contains(" ")) {
     		try{
-    			ok=model.add(testo);
+    			model.add(testo);
     			txttext.clear();
     			txtrisultato.clear();
     		}
